@@ -61,15 +61,15 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)" target="_blank" rel="noopener">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" target="_parent" href="javascript:void(0)">所有文章</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)" target="_blank" rel="noopener">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" target="_parent" href="javascript:void(0)">友链</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)" target="_blank" rel="noopener">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" target="_parent" href="javascript:void(0)">关于我</a>
     			
             
 		</nav>
@@ -225,6 +225,97 @@
 
 
   
+    <article id="post-python三大器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/23/python%E4%B8%89%E5%A4%A7%E5%99%A8/">python三大器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/23/python%E4%B8%89%E5%A4%A7%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2019-11-23T12:39:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Python学习之三大名器-装饰器、迭代器、生成器</p>
+<p>一、装饰器<br>    装饰，顾名思义就是在原来的基础上进行美化及完善，器这里指函数，所以说装饰器就是装饰函数，也就是在不改变原来函数的代码及调用方式的前提下对原函数进行功能上的完善。其核心原理其实是利用闭包。<br>    格式 @关键字+装饰函数<br>         被装饰函数（）<br>    注意：@行必须顶头写而且是在被装饰函数的正上方<br>    按照形式可以分为：无参装饰器和有参装饰器，有参装饰器即给装饰器加上参数<br>    以下示例是一个无参装饰器，为原函数添加了统计运行时间的功能<br>import time<br>#定义装饰器<br>def timer(func):<br>    def wrapper(<em>args,*</em>kwargs):<br>        start_time = time.time()<br>        res = func(<em>args,*</em>kwargs)<br>        stop_time = time.time()<br>        print(“run time is %s” %(stop_time-start_time))<br>        return res<br>    return wrapper</p>
+<p>#调用装饰器<br>@timer<br>def index():<br>    l = []<br>    for i in range(10000000):<br>        l.append(i)<br>#调用阶段<br>index()</p>
+<p>   以下是一个有参装饰器，实现简单的认证功能，#数字表示程序依次执行顺序<br>def auth2(auth_type): #1 #3<br>    def auth(func): #4 #6<br>        def wrapper(<em>args,*</em>kwargs): #7 #10<br>            if auth_type == ‘file’: #11<br>                name=input(‘username: ‘)<br>                password=input(‘password: ‘)<br>                if name == ‘zhejiangF4’ and password == ‘666’:<br>                    print(‘auth successfull’)<br>                    res=func(<em>args,*</em>kwargs)<br>                    return res<br>                else:<br>                    print(‘auth error’)<br>            elif auth_type == ‘sql’: #12<br>                print(‘nothing！’) #13<br>        return wrapper #8<br>    return auth #5</p>
+<p>@auth2(auth_type=’sql’) #2<br>def index():<br>    print(‘welcome to inex page’)</p>
+<p> index() #9</p>
+<p>二、迭代器<br>    迭代器（iterator）是一种对象，它能够用来遍历标准模板库容器中的部分或全部元素，每个迭代器对象代表容器中的确定的地址。——百度百科</p>
+<pre><code>可迭代的：只要对象本身有__iter__方法，那它就是可迭代的
+执行对象下的__iter__方法，得到的结果就是迭代器</code></pre><p>为什么要用迭代器：<br>    优点<br>    1：迭代器提供了一种不依赖于索引的取值方式，这样就可以遍历那些没有索 引的可迭代对象了（字典，集合，文件）<br>    2：迭代器与列表比较，迭代器是惰性计算的，更节省内存<br>        缺点：<br>    1：无法获取迭代器的长度，使用不如列表索引取值灵活<br>    2：一次性的，只能往后取值，不能倒着取值<br>查看s对象是否是迭代器：print(isinstance(s,Iterator)) 返回True就是迭代器<br>from collections import Iterable,Iterator<br>s=’hello’<br>l=[1,2,3]<br>t=(1,2,3)<br>d={‘a’:1}<br>set1={1,2,3,4}<br>f=open(‘a.txt’)</p>
+<p>s.<strong>iter</strong>()<br>l.<strong>iter</strong>()<br>t.<strong>iter</strong>()<br>d.<strong>iter</strong>()<br>set1.<strong>iter</strong>()<br>f.<strong>iter</strong>()<br>print(isinstance(s,Iterable))<br>print(isinstance(l,Iterable))<br>print(isinstance(t,Iterable))<br>print(isinstance(d,Iterable))<br>print(isinstance(set1,Iterable))<br>print(isinstance(f,Iterable))</p>
+<p>print(isinstance(s,Iterator))<br>print(isinstance(l,Iterator))<br>print(isinstance(t,Iterator))<br>print(isinstance(d,Iterator))<br>print(isinstance(set1,Iterator))<br>print(isinstance(f,Iterator))</p>
+<p>运行结果如下：</p>
+<p>可以看出，字符串、列表、字典、集合、元组、文件都是可迭代的，但是只有文件是迭代器</p>
+<p>三、生成器</p>
+<p>通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。<br>所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器：generator。<br>    函数中包含yield语句的我们称其为生成器函数<br>    yield与return有何区别？<br>        return只能返回一次函数就彻底结束了，而yield能返回多次值<br>    yield到底干了什么事情：<br>        yield把函数变成生成器（生成器就是迭代器）<br>        函数在暂停以及继续下一次运行时的状态是由yield保存<br>    下例是两个生成器的应用，一个用来不断的输入url，不断的解析，另外一个则模仿Linux中的管道命令（实质是将一个函数的运行结果传给下一个函数做处理，实现的比较简单粗暴，多包涵，哈哈）<br>例1：<br>from urllib.request import urlopen<br>def get(url):<br>    while True:<br>        def index():<br>            return urlopen(url).read()<br>        url = yield index()<br>g = get(‘<a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">http://www.baidu.com&#39;</a>)<br>next(g)<br>def run():<br>    while True:<br>        url = input(“请输入URL：”)<br>        if ‘http://‘ not in url:<br>            print(g.send(‘http://‘+url))<br>        else:<br>            print(g.send(url))<br>run()</p>
+<p>例2：<br>def cat(filename):<br>    with open(filename,’r’) as f:<br>        while True:<br>            line = f.readline()<br>            if not line:<br>                break<br>            else:<br>                yield line<br>def grep(string,lines):<br>    for line in lines:<br>        if string in line:<br>            yield line<br>g1 = cat(‘a.txt’)<br>g2 = grep(‘mac’,g1)<br>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    m = input(“请输入命令：”).strip()<br>    if m == “cat a.txt |grep mac”:<br>        for i in g2:<br>            print(i)</p>
+<p>补充：协程<br>    如果在一个函数内部yield的使用方式是表达式形式的话，如x=yield，那么该函数成为协程函数<br>直接看例子吧<br>def hello(func):<br>    def wrapper(<em>args,*</em>kwargs):<br>        res = func(<em>args,*</em>kwargs)<br>        next(res)<br>        return res<br>    return wrapper</p>
+<p>@hello<br>def eater(name):<br>    print(‘%s start to eat food’ %name)<br>    food_list=[]<br>    while True:<br>        food=yield food_list<br>        print(‘%s get %s ,to start eat’ %(name,food))<br>        food_list.append(food)<br>    print(‘done’)<br>e=eater(“somebody”)<br>print(e.send(‘巧克力’))<br>print(e.send(“香蕉”))</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/23/python%E4%B8%89%E5%A4%A7%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -319,6 +410,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
