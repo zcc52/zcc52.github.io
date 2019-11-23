@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/11 | Hexo</title>
+  <title>git使用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;11&#x2F;index.html">
+  <meta name="description" content="GIT**版本管理工具教程**">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git使用">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;git%E4%BD%BF%E7%94%A8&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="GIT**版本管理工具教程**">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-23T12:47:18.406Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -149,87 +152,672 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-git使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      git使用
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/23/git%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+
+        
+        <a href="/2019/11/23/git%E4%BD%BF%E7%94%A8/" class="archive-article-date">
   	<time datetime="2019-11-23T12:43:39.315Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/23/git%E4%BD%BF%E7%94%A8/">git使用</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>GIT**</strong>版本管理工具教程** </p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<p><strong>一</strong> <strong>Git**</strong>初始化** </p>
+<p>\1. 下载安装， 下载地址： <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a> 每个系统的都有（linux、mac、 </p>
+<p>windows等），看官网的安装教程，很详细，此处我以windows来练习 </p>
+<p>\2. 首先创建一个文件夹，这个文件夹就是我们将来通过git来管理的所有文件的存放地点 。 </p>
+<p>\3. 在文件夹中右键 使用Git Bash </p>
+<p>\4. 在弹出的窗口中执行初始化指令，让git帮我们对这个文件夹中的所有文件以及文件夹进行管理 </p>
+<p>\6. 产生的.git文件夹用来存放你管理的文件的所有版本以及git配置相关的内容，不要轻易动它 </p>
+<p><strong>二 简单指令使用</strong> </p>
+<p><strong>基本操作</strong> </p>
+<p>管理之后进行二次开发，修改一些文件之后： </p>
+<p>查看日志 </p>
+<p><strong>简单总结</strong> </p>
+<p>git init #创建git版本管理的本地仓库 </p>
+<p>git status 查看仓库中所有的文件夹和文件的状态 </p>
+<p>git add supercrm 让git管理单独的文件夹或者文件 </p>
+<p>git add . 管理所有文件和文件夹 </p>
+<p>配置用户名和邮箱 </p>
+<p>$ git config –global user.name &lt;用户名&gt; </p>
+<p>$ git config –global user.email &lt;邮箱地址&gt; </p>
+<p>例如： </p>
+<p>$ git config –global user.name “吴超” </p>
+<p>$ git config –global user.email “<a href="mailto:1069696250@qq.com" target="_blank" rel="noopener">1069696250@qq.com</a>“ </p>
+<p>然后就可以提交版本了，看指令 </p>
+<p>git commit -m ‘描述信息’ </p>
+<p>例如： git commit -m ‘v1版本’ </p>
+<p>git add supercrm </p>
+<p>git commit -m ‘v2版本’ </p>
+<p>git log<strong>三</strong> <strong>Git**</strong>进阶** </p>
+<p><strong>Git**</strong>三大区域** </p>
+<p>介绍： 作区(写代码的地方)—git add暂存区(临时存储)—git commit本地库(历史版本) </p>
+<p><strong>Git**</strong>回滚** </p>
+<p>1 进入要管理的目录 </p>
+<p>2 git init初始化 即：让git管理我们当前的文件夹 </p>
+<p>3 git status 检测当前文件夹中的文件状态 </p>
+<p>4 三种颜色的变化 </p>
+<p>a 红色：新增文件或者修改的老文件 –&gt; 执行git add .（或者单个文件或文件夹的名称） </p>
+<p>b 绿色：git已经管理起来了 –&gt; 执行git commit -m ‘描述信息’ </p>
+<p>c 白色：生成版本了 </p>
+<p>好，之后我们会细说这几个颜色到底还有什么意义 </p>
+<p>5 git log 查看版本记录 </p>
+<p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自 </p>
+<p>动创建的第一个分支master，以及指向master的一个指针叫HEAD。 </p>
+<p>文件往Git版本库里添加的时候，是分两步执行的： </p>
+<p>第一步用git add把文件添加进去，实际上就是把文件修改添加到暂存区。 </p>
+<p>第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。 </p>
+<p>创建Git版本库时，Git自动为我们创建了唯一一个master分支，git commit就是往master分支上提交更 </p>
+<p>改。add需要提交的文件修改通通放到暂存区，然后commit可一次性提交暂存区的所有修改假如我们现在写了三个版本了，但是你发现第三个版本有问题，或者说被迫的下线第三个版本添加的 </p>
+<p>新功能，那么我们是不是要将代码回到第二个版本的状态啊，如果我们自己手动去修改是不是就非常的 </p>
+<p>麻烦了，所以此时就用到我们git回滚功能了 。 </p>
+<p>Git回滚操作指令 </p>
+<p>不过，后来你又觉得第三个版本的功能还是挺好的，接着拿回来用吧，但是你已经回滚到第二个版本 </p>
+<p>了啊，这可怎么办？看操作： </p>
+<p>先执行git log，你发现，git log里面没有显示我们原来的第三个版本，对不对，此时我们不能用这个 </p>
+<p>指令来查看了，需要下面这个指令： </p>
+<p>Git的强大之处，能够让我们在任意版本之间来回切换。 </p>
+<p>我们接着学两个指令 </p>
+<p>如果我们将修改i的文件已经添加到了暂存区了，又怎么回滚呢？看指令 </p>
+<p>如果想让他再回到未修改时的状态，那么就又用到了我们那个git checkout – 文件名，那个指令了 。 </p>
+<p>关于回滚，git里面还有几个其他的指令，就不一个一个的演示了，大家看图就明白了： </p>
+<p>git log #查看日志，每个版本都有版本号 </p>
+<p>git reset –hard 版本号 </p>
+<p>例如：git reset –hard a3c69761b4ecd8b23c392315cd245f2939024882 (第二个版本的版本号) </p>
+<p>git reflog #也是查看日志，但是包括回滚操作的版本 </p>
+<p>再通过git reset –hard 版本号来回滚 </p>
+<p>git checkout – 文件名 #将文件从以修改的工作区回滚到未修改的状态 </p>
+<p>git reset HEAD 文件名<strong>指令总结</strong> </p>
+<p>git init </p>
+<p>git add </p>
+<p>git commit </p>
+<p>git log </p>
+<p>git reflog </p>
+<p>git reset –hard 版本号 </p>
+<p><strong>Git**</strong>分支** </p>
+<p>分支可以给使用者提供多个开发环境，也就是说可以将你的工作从主线中分离出来，以免影响开发主 </p>
+<p>线，等分支的代码开发完之后，再合并到主线代码上，就比如说，我们写了一个毕业论文，大致的流程 </p>
+<p>写完了，但是我们可能觉得某些地方写的太少了（添加新功能），需要丰富一下，或者有些地方可能写 </p>
+<p>的有问题需要调整一下（之前的代码有bug，需要修改），那么我们怎么做呢，是不是会复制一份这个 </p>
+<p>论文，然后再修改，改完之后如果没有什么问题，就将改完之后的作为了最新的版本（分支上添加了新 </p>
+<p>功能或者修复了bug，然后进行分支合并）。 </p>
+<p>大家在这里先不用去考虑公司里面到底是怎么使用git来进行工作的，我们首先先来看看，如果你在自 </p>
+<p>己的电脑上开发程序，用git是怎么个流程，怎样开分支，分支是个什么样子？比如，我们现在的代码开发到了第三个版本，之前我们没有说什么分支的概念，其实我们开发代码的 </p>
+<p>时候，默认的分支叫做主分支(master分支)，只是我们一直还不知道。 </p>
+<p><strong>指令总结</strong> </p>
+<p>比如我当前的代码只到了test3，3版本，我想添加一个新的功能test4，那么我就创建了一个dev分 </p>
+<p>支，并在dev分支上添加了test4，比如说test4需要打印两行内容，但是我现在写了一行内容的时候，发 </p>
+<p>现之前线上使用的代码(线上使用的代码一般是master分支上的)，出现了bug，那么我们需要切换到 </p>
+<p>master分支，并且在master分支上再创建一个bug分支，在bug分支上修复bug，修复完成之后，需要 </p>
+<p>合并到master分支上，合并之后的版本我们暂且称为5版本，记着，5版本的代码和dev开分支时的3版 </p>
+<p>本代码是有些变动的，因为修复了bug，但是dev分支上还是使用的master分支上的v3版本进行的新功 </p>
+<p>能的开发，那么bug修复完之后，我们现在又要回到dev分支上继续新功能的开发，开发完成之后，需 </p>
+<p>要合并到master分支上，合并的时候，你会发现报了一个错误，其实也不是错误，就是提示你，代码有 </p>
+<p>冲突，这冲突怎么来的，你想，master分支已经到了c5版本，但是dev分支上的代码还是从master分支 </p>
+<p>的c3版本的基础进行添加新功能的，所以合并的时候c3版本的其他代码和它c5版本的代码本身就有一些 </p>
+<p>不一样的地方（就是那个bug修复的地方），所以出现了冲突的问题，那么怎么办呢，没办法，我们只 </p>
+<p>能手动来修复冲突，那么怎么修复呢，git会将所有的冲突全部标记在你的代码文件中，有冲突的方法， </p>
+<p>找到它手动修改一下就可以了。其实，只要我们两个分支中的相同的文件的同一行出现了不同的内容， </p>
+<p>合并时就会出现冲突。看一下冲突的报错是什么样子的： </p>
+<p>出现了bug，我们看看bug在哪里，其实git会将冲突在你的代码文件中标识出来，看图： </p>
+<p>git branch 查看当前分支 </p>
+<p>git branch dev 创建一个名为dev的分支 </p>
+<p>git checkout dev 将工作切换到dev分支上 </p>
+<p>git checkout -b dev #创建并切换到dev分支上，和上面两个指令的效果一样 </p>
+<p>git branch master </p>
+<p>git merge bug #分支合并—首先切换到master分支，然后在master分支上执行merge指令来合并 </p>
+<p>bug分支的代码 </p>
+<p>git branch -d bug 删除bug分支这里提示你了，dev分支上是哪些内容，master分支上是哪些内容，我们把没用的删除就可以了，然 </p>
+<p>后提交一个新的版本，这样就完成了分支代码合并 </p>
+<p><strong>Git**</strong>工作流** </p>
+<p>看图： </p>
+<p>公司一般最少有两个分支，master只保留正式(线上)版本，dev(develop)分支，开发都在dev分支上 </p>
+<p>搞。 </p>
+<p><strong>四</strong> <strong>Github**</strong>代码管理仓库** </p>
+<p>我们做开发的时候，写程序，可能会有多个人一起开发，或者你自己有多个电脑，家里一个电脑，办 </p>
+<p>公室一个电脑，但是你如果刚开始的代码都是在家里的电脑写的，然后你到了公司，你想继续开发你的 </p>
+<p>程序，那么就需要你自己来回的拷贝自己的代码，并随身携带，非常麻烦，你说对不对，所以现在就出 </p>
+<p>现了代码网络托管站(就类似于行李托管站一样)，可以帮你保存你的代码，以及各个版本的代码和所有 </p>
+<p>分支，这样的话，你在家里开发完了之后，把代码放到托管站，就不用自己随身携带了，等你到了公 </p>
+<p>司，使用公司的电脑开发的时候，就可以直接通过网络托管站把自己已经开发好的代码拉下来到自己的 </p>
+<p>本机，然后继续开发，开发完了之后，在交给托管站托管，这样就方便多了，有很多这样的托管站，比 </p>
+<p>如今天我们要说的GIthub，还有GitLab、码云、开源中国、CSDN等都在做代码托管平台。使用Github有这么几步： </p>
+<p>注册Github账号 </p>
+<p>创建仓库 </p>
+<p>本地代码推送到仓库 </p>
+<p>好，那么我就来看看一看具体怎么玩： </p>
+<p><strong>第一步：注册**</strong>Github<strong>**账号</strong> </p>
+<p>这个就不带着大家注册了，看图，网址： <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> </p>
+<p>注册号账号之后，点击上面的sign in进行登陆，登陆成功之后，会来到这个页面，也就是你的首页 </p>
+<p><strong>第二步：创建仓库</strong> </p>
+<p>也就是我们说的托管站里面开辟一个自己的代码托管的空间，看操作然后会看到下面的页面，看介绍 </p>
+<p>创建好之后我们会看到下面这个页面，其实在GitHub这个托管站上，就相当于我们创建了一个叫做 </p>
+<p>dbhot(就上面我起的那个仓库名称)的文件夹，用来管理我们的项目。<strong>第三步：**</strong>Github<strong>**保存代码</strong> </p>
+<p>将我们的代码和分支推送到GitHub上保存 </p>
+<p>打开我们的终端，也就是我们那个git bash，查看一下状态。 </p>
+<p>然后看一下推送代码的指令： </p>
+<p>查看一下当前的分支然后执行指令： </p>
+<p>然后执行它： </p>
+<p>会给你弹出一个窗口，让你输入GitHub的账号和密码，这里我的截图失败了，导致大家在这里看不 </p>
+<p>到效果了，但是没关系，你应该可以搞定的。然后接着看： </p>
+<p>等代码都推送成功了之后，我们来GitHub上刷新一下我们的仓库页面，就会看到变化了：推送一下dev分支到GitHub上：刷新我们的GitHub页面，就看到有两个分支了 </p>
+<p><strong>第四步： 拉取**</strong>GitHub<strong>**上的代码继续开发</strong> </p>
+<p>换一个电脑，然后拉取GitHub上的代码继续开发，我这里简单模拟一下，就在本地重新创建一个文 </p>
+<p>件夹了，然后在这个文件夹里面来搞我们的代码 </p>
+<p>比如：我又创建了一个gitpro2文件夹，然后在这个目录里面使用我们的git bash： </p>
+<p>在这里面克隆一下远程GitHub上的代码到我们的这个文件夹里面： </p>
+<p>先看一下我们远程仓库的地址是什么，看GitHub：然后执行下面的指令： </p>
+<p>git clone 地址 </p>
+<p>例如： git clone <a href="https://github.com/clschao/dbhot.git" target="_blank" rel="noopener">https://github.com/clschao/dbhot.git</a> </p>
+<p>然后整个仓库就被我们克隆下来了（包括所有分支，所有代码，所有版本），在我们的gitpro2文件 </p>
+<p>夹里面了，然后我们需要进入到仓库里面才能看到我们的代码： </p>
+<p>查看一下分支： </p>
+<p>切换到dev分支上试试，通过查看提交的版本，你会发现就是我们之前的dev分支：<strong>第五步：换一个电脑继续开发</strong> </p>
+<p><strong>指令总结</strong> </p>
+<p>开发完毕之后，在dev分支上commit，然后切换到master分支上合并一下dev分支，然后推送到 </p>
+<p>GitHub上的master分支上，就算是完成了 。 </p>
+<p>上传代码 </p>
+<p>\1. 给远程仓库起名 </p>
+<p>git remote add origin 远程仓库地址 </p>
+<p>\2. 向远程推送代码 </p>
+<p>git push -u origin 分支 </p>
+<p>在新电脑上第一次获取代码 </p>
+<p>\1. 克隆远程仓库代码 </p>
+<p>git clone 远程仓库地址(内部已实现git remote add origin 远程仓库地址) </p>
+<p>\2. 切换分支 </p>
+<p>git checkout 分支 </p>
+<p>在新电脑上进行开发 </p>
+<p>\1. 切换到dev分支进行开发 </p>
+<p>git checkout dev </p>
+<p>\2. 把master分支合并到dev(仅一次) </p>
+<p>git merge master </p>
+<p>\3. 修改代码 </p>
+<p>\4. 提交代码 </p>
+<p>git add . </p>
+<p>git commit -m ‘xx’ </p>
+<p>git push origin dev </p>
+<p>回老电脑上继续写代码 </p>
+<p>\1. 切换到dev分支进行开发 </p>
+<p>git checkout dev </p>
+<p>\2. 拉代码 </p>
+<p>git pull origin dev </p>
+<p>\3. 继续开发 </p>
+<p>\4. 提交代码 </p>
+<p>git add . </p>
+<p>git commit -m ‘xx’ </p>
+<p>git push origin dev最后，因为我们dev分支上也是最新的代码了，也可以将我们的dev分支推送到GitHub上的dev分支 </p>
+<p>上，其实推送之前有个好习惯就是在dev分支上合并一下master分支的代码git merge master，这里我 </p>
+<p>没有写，但是个好习惯 。 </p>
+<p>以后如果我们还想继续开发，我们可以将我们的dev和master分支上的最新的代码都拉下来进行继续 </p>
+<p>开发： </p>
+<p><strong>第六步： 如果在公司忘记提交代码，怎么搞？</strong> </p>
+<p>其实git pull origin dev等价于下面两个指令： </p>
+<p>看图： </p>
+<p>git pull origin dev </p>
+<p>git pull origin master </p>
+<p>在公司开发的时候 </p>
+<p>\1. 拉代码 </p>
+<p>git pull origin dev </p>
+<p>\2. 继续开发 </p>
+<p>\3. 提交代码 </p>
+<p>git add . </p>
+<p>git commit -m ‘xx’ </p>
+<p>注：忘记push了,没有推给GitHub </p>
+<p>回到家继续开发 </p>
+<p>\1. 拉代码，发现在公司写的代码忘记提交到GitHub上了 </p>
+<p>git pull origin dev </p>
+<p>\2. 继续开发其他功能 </p>
+<p>但是在家里写的功能有可能和你在公司开发的代码有些冲突(在同一行) </p>
+<p>\3. 把dev分支也推送到了远程 </p>
+<p>git add . </p>
+<p>git commit -m ‘xxx’ </p>
+<p>git push origin dev </p>
+<p>第二天到了公司继续写代码 </p>
+<p>\1. 拉代码，把昨天晚上在家里写的其他功能的代码拉到本地（有合并、可能产生冲突） </p>
+<p>git pull origin dev </p>
+<p>\2. 如果有冲突,手动解决冲突(公司电脑上昨天忘记push的代码和昨日回到家后写的代码可能有些冲突) </p>
+<p>\3. 继续开发其他功能 </p>
+<p>\4. 把dev分支也推送到远程 </p>
+<p>git add . </p>
+<p>git commit -m ‘xxxx’ </p>
+<p>git push origin dev </p>
+<p>git fetch origin dev #将远程仓库dev分支的代码拉到本地git的版本库中，为了和本地dev分支做 </p>
+<p>个区分，远程拉下来的dev分支会叫另外一个名字：origin/dev </p>
+<p>git merge origin/dev # 合并远程拉取下来的dev分支的代码<strong>五</strong> <strong>rebase**</strong>变基** </p>
+<p>这个rebase和上面学的东西关联性不大，这是一个独立的概念，这个rebase能够让我们的git提交记 </p>
+<p>录变得非常简洁，看图：<strong>rebase**</strong>的第一个场景** </p>
+<p>比如看下图，我重新创建了一个文件夹，里面创建了4个文件，每创建一个文件就提交一个版本，现 </p>
+<p>在有下面4个版本了，但是v2、v3和v4版本只是一些没有太大改动的版本，你想把这些记录合并成为一 </p>
+<p>个，就用到了我们的rebase： </p>
+<p>看指令：那我们执行一下git rebase -i HEAD~3 这个指令看一下效果，执行完之后你会看到这样一个界面： </p>
+<p>然后修改 ： </p>
+<p>然后你会看到下面的页面： </p>
+<p>方式1：</p>
+<p>git rebase -i 版本号 </p>
+<p>例如：git rebase -i 281f2525fb3600b663a6554ed9e301781239bd69 #这个是v2版本的版 </p>
+<p>本号，那么执行这个指令的意思就是将v2版本一直到目前最新版本v4，全部合并到一起 </p>
+<p>方式2：常用 </p>
+<p>git rebase -i HEAD<del>3 #3表示合并3个版本，而HEAD</del>3的意思是以当前最新的版本开始，合并最 </p>
+<p>近的三个版本，也就是v4、v3、v2将合并到一起然后我们在描述信息的地方可以改一些描述信息，比如改成下面的样子：这样我们的提交记录就更加简洁了，但是有个注意事项，<strong>如果你合并版本之前，已经将**</strong>v2<strong><strong>版本</strong></strong>push** </p>
+<p><strong>到远程了，这样你再合并**</strong>v2<strong><strong>版本的话，等你再</strong></strong>push<strong>**到远程会导致远程的版本变的很混乱，所以建议不</strong> </p>
+<p><strong>要将已经**</strong>push<strong><strong>到远程的版本进行合并，我们最好只合并自己本地的，然后再</strong></strong>push<strong>**到远程。</strong> </p>
+<p><strong>rebase**</strong>的第二个场景** </p>
+<p>看图： </p>
+<p><strong>指令总结</strong> </p>
+<p>\1. git branch dev 和 git checkout dev #创建dev分支和切换到dev分支上 </p>
+<p>\2. 创建一个dev.txt文件 </p>
+<p>\3. git add . 和git commit -m ‘dev branch’ </p>
+<p>\4. git checkout master #切换到master分支上 </p>
+<p>\5. 创建一个master.txt文件 </p>
+<p>\6. git add .和git commit -m ‘master branch’ #在master分支上提交一下最新添加的 </p>
+<p>master.txt文件也作为master分支上的一个版本 </p>
+<p>在dev分支上执行一个git log查看一下dev分支提交的版本<strong>rebase**</strong>的第三个场景** </p>
+<p>不做演示了，看看图吧： </p>
+<p>其实第三个场景有点类似我们的第二个场景，不过是产生在当我们执行pull的时候，如果本地代码和 </p>
+<p>远程的代码有冲突，会导致我们本地的分支进行git log日志的分叉，所以为了防止这种分叉，我们使用 </p>
+<p>fetch和rebase两个指令来代替，rebase也能够合并代码。（这个就作为了解吧） </p>
+<p>注意：说了rebase操作其实也是合并代码的操作，那么好了，我们如果在进行rebase指令的时候， </p>
+<p>代码有冲突怎么办，手动解决冲突，然后执行一下git提示的指令，比如git add等，然后执行一个git </p>
+<p>rebase –continue，来继续执行rebase指令就可以了。 </p>
+<p><strong>六</strong> <strong>Git**</strong>配合<strong><strong>Beyond Compare</strong></strong>来解决冲突** </p>
+<p>在master分支上执行一个git log 查看一下master分支提交的版本 </p>
+<p>git log –graph #图形化界面显示所有的提交记录 </p>
+<p>git log –graph –pretty=format:’%h %s’ #让图形化界面显示记录的时候更清晰一些：%h是显 </p>
+<p>示版本号，%s是显示版本描述。 </p>
+<p>到目前为止，我们就做出了上面那个图的效果，在dev分支上有一个版本，在master分支上有其他的版本 </p>
+<p>那么以后我们再开发的时候，可以通过rebase来让dev分支上的记录合并到master分支上，那么我们在 </p>
+<p>master分支上再查看git log –graph的时候就只能看到一条线的记录了 </p>
+<p>现在我们通过rebase来合并一下dev分支上的版本，让git log显示的记录编程一条线 </p>
+<p>\1. git checkout dev </p>
+<p>\2. git merge master #注意，因为dev分支上的代码没有master分支上的全，所有先合并一下master </p>
+<p>分支，然后再进行后面的操作 </p>
+<p>\3. 创建一个dev1.txt – git add . – git commit -m ‘dev branch commit 1’ </p>
+<p>\3. git checkout master </p>
+<p>\4. 创建一个master1.txt文件 – git add . – git commit -m ‘master branch commit 1’ </p>
+<p>\5. 这样的话我们再dev分支上有个版本，master分支上又一个版本 </p>
+<p>\6. git checkout dev </p>
+<p>\7. git rebase master #将dev分支上的这个新记录并到master分支的记录上 </p>
+<p>\8. git checkout master </p>
+<p>\9. git merge dev </p>
+<p>然后我们再执行git log –graph 就看到了一条线，并且这条线上有dev分支开发的那个版本第一步： 安装beyond compare软件，下载地址：<a href="http://www.scootersoftware.com/download.ph" target="_blank" rel="noopener">http://www.scootersoftware.com/download.ph</a> </p>
+<p>p，就直接点击下载安装，然后和安装其他软件一样，点点点就可以了。 </p>
+<p>第二步：在git中进行以下配置 </p>
+<p>如果通过上面的指令配置不能正常生效的话，就改动以下配置文件，打开 .gitconfifig 配置文件 </p>
+<p>（windows 在 C:\Users\Administrator [Administrator 为你当前用户名], mac 在 ~/）,加入以下内容： </p>
+<p>第三步：应用这个软件来解决冲突 </p>
+<p>当我们执行merge合并的时候，比如说，我们执行了一下git merge dev分支的指令，会报错，报 </p>
+<p>一个代码冲突的错误，然后我们知道产生冲突了，此时我们就可以使用我们的beyond compare来进行 </p>
+<p>冲突排查和修改，使用下面的指令来调用工具： </p>
+<p>执行上面的指令之后，自动会打开beyond compare，你会 看到下面的页面： </p>
+<p><strong>七</strong> <strong>Git**</strong>多人协作开发** </p>
+<p>多人协作开发gitflflow工作流思路，看图： </p>
+<p>git config –local merge.tool bc3 #–local的意思是只对当前项目有效，其他的本地仓库是不 </p>
+<p>生效的 </p>
+<p>git config –local mergetool.path ‘/usr/local/bin/bcomp’ #beyond compare的执行程 </p>
+<p>序的安装路径 </p>
+<p>git config –local mergetool.keepBackup false </p>
+<p>[merge] </p>
+<p>tool = bc3 </p>
+<p>[mergetool “bc3”] </p>
+<p>path = D:/Program Files (x86)/Beyond Compare 3/BCompare.exe #注意win下是这个/路径 </p>
+<p>分隔符，文件路径尽量不要出现空格昂 </p>
+<p>git mergetool创建新项目，我们来玩一下整个工作流。 </p>
+<p><strong>第一步：创建组织</strong> </p>
+<p>先去我们远程的GitHub上创建一个组织（其实还有另外一种邀请其他人员进行协同开发的方式，不 </p>
+<p>适合公司内部开发，所以我们给大家说一种正规的，就是创建组织）。 </p>
+<p>然后进入这个页面：再然后进入这个页面： </p>
+<p>点击next会看到下面的页面：然后skip之后，我们看到下面的页面： </p>
+<p>点击创建仓库之后，就又到了我们创建仓库的页面：然后就看到了我们仓库，这样我们的组织和仓库就创建好了。 </p>
+<p><strong>注意，我们现在创建的项目仓库是在我们创建的组织里面创建的，和之前单纯的创建仓库是不太一样</strong> </p>
+<p><strong>的，因为我们公司将来可能有多个项目，那么我们就可以通过这个组织来管理多个仓库就可以了。</strong> </p>
+<p>好了，创建我们的本地git仓库，然后关联一下我们远程的这个仓库(和远程仓库名称要一直)，执行一 </p>
+<p>下GitHub上创建仓库后提示的指令就可以了：然后刷新一下我们的GitHub页面，就看到了我们push上来的代码了： </p>
+<p>到这里我们的仓库就创建好并且和本地关联好了，那么我们继续学一个新东西，叫做tag（标签）， </p>
+<p>公司一般都是用标签来管理版本的，比如看下图，我们git log查看一下当前版本： </p>
+<p>这样去看版本的时候，一长串的版本号看着其实不太好看，我们就可以给这个版本打上一个标签 </p>
+<p>tag。 </p>
+<p><strong>Git**</strong>标签** </p>
+<p>看指令：再看git log： </p>
+<p>此时，我们就给第一个版本打上了一个标签，我们还需要将他推到远程仓库： </p>
+<p>执行完这个指令之后，我们再去GitHub上看一下： </p>
+<p>点击release看一下： </p>
+<p>git tag -a ‘v1’ -m ‘第一版’ </p>
+<p>git push origin –tags #将所有的tag推送到远程仓库好，创建组织，创建仓库，关联仓库，给版本打标签，我们就学完了，接下来我们学一下如果邀请其 </p>
+<p>他成员。 </p>
+<p><strong>第二步：**</strong>GitHub<strong>**组织中邀请成员</strong> </p>
+<p>按照我们的gitflflow工作流程图来看，此时我们的master分支和第一个版本已经创建好了，接下来， </p>
+<p>我们应该创建一个dev分支，然后邀请其他成员来完成其他功能的开发 </p>
+<p><strong>第一步：创建**</strong>dev<strong>**分支</strong> </p>
+<p><strong>第二步：将**</strong>dev<strong>**分支推送到远程</strong> </p>
+<p>git push origin dev </p>
+<p>查看一下GitHub，就有了我们的dev分支： </p>
+<p><strong>第三步：邀请两个成员</strong>1. 两个成员都需要先去GitHub上注册一下自己的GitHub账号，其他的代码托管平台也是这么玩，先 </p>
+<p>去注册账号。这里我自己又通过其他的邮箱创建了一个名为Jadentest的账号，用它来测试 </p>
+<p>\2. 邀请成员 </p>
+<p>然后看到下面的页面： </p>
+<p>点击邀请之后，弹出下面的窗口： </p>
+<p>输入成员名称，然后点击invite，看到下面的页面，先选择一个普通成员就行了：那么这个Jadentest在创建账户时留下的邮箱就会收到一个邮件： </p>
+<p>点击查看这个邮件，然后点击加入组织： </p>
+<p>然后会看到下面这个页面：再点击join加入就可以了，但是记着，上面的页面是出现在了Jadentest这个GitHub账户中的页 </p>
+<p>面，所以如果你是用一个电脑在玩，需要先登陆上这个账户，再点击邮件加入组织。 </p>
+<p>好，看一下GitHub我们的组织中people这个选项中，就有了两个成员： </p>
+<p>好，继续登陆我们的clschao这个账户，然后看一下组织的权限以及项目的权限。 </p>
+<p><strong>1.**</strong>组织权限** </p>
+<p>在组织的settings中：因为我们的组织中可能有很多的项目，而我邀请的成员不能说上来就对所有的项目都有修改的权限， </p>
+<p>所以是只读的，可以看看，那么如果我们想让某些成员对某些项目有修改的权限，就需要到项目中去做 </p>
+<p>相关设置。 </p>
+<p><strong>2.**</strong>项目权限** </p>
+<p>点击项目，在项目页面的settings中： </p>
+<p>这样的话，这个Jadentest成员就有了对我们这个gitflflowtest项目的修改权限了，也就是可以正常的推 </p>
+<p>送代码了。 </p>
+<p>好，成员已经邀请好了，然后这个成员需要在自己的本地将我们远程仓库的项目下载到自己的本地， </p>
+<p>比如我在本地创建了一个Jadentest的文件夹作为它自己的本地Git仓库。 </p>
+<p><strong>3.**</strong>新成员进行项目协作开发**将我们的远程仓库的这个gitflflowtest项目的地址给他： </p>
+<p>然后它在自己的本地下载我们的代码： </p>
+<p>然后进入到gitflflowtest文件夹中，就看到了我们远程仓库中的所有内容，进入这个文件夹，然后再运 </p>
+<p>行一下我们的git bash：那么开始开发yue功能： </p>
+<p>比如，开发就创建了这个文件，然后这个成员就要回家了，然后将自己开发的文件推到远程仓库： </p>
+<p>然后回到家之后，继续又想开发了：接下来需要干什么呢？需要代码的review，一般是小组长或者技术主管或者总监等，怎么做呢，一般 </p>
+<p>是通过pull request。 </p>
+<p><strong>4.pull request**</strong>合并请求** </p>
+<p>首先我们的GitHub上的项目中进行一些配置： </p>
+<p>点击添加规则按钮之后，我们一下页面： </p>
+<p>然后点击下面的一个create按钮，然后再点击一下左边的branches菜单：其实master分支也可以继续添加一个这样的规则，这里我就不做演示了。 </p>
+<p>然后我们的Jadentest成员将yue功能开发完了，需要提交一个pull request请求，在哪里做呢？在他 </p>
+<p>自己的GitHub上，比如我们登陆一下这个用户，然后看一下GitHub上的操作： </p>
+<p>点击这个new pull request：然后我这个管理员clschao就能在自己的GitHub上看到Jadentest这个成员发来的请求了： </p>
+<p>然后点击这个yue功能：然后就看到下面所有的文件以及代码了： </p>
+<p>然后看到下面的页面：然后切换会我们的这个页面： </p>
+<p>然后还需要确定一下：还可以删除这个分支，如果没有用了，就可以点击下面的按钮进行删除： </p>
+<p>然后再看我们的远程仓库中的dev分支，就有了这些Jadentest新开发的代码了： </p>
+<p>然后其他成员就可以在自己的本地通过git pull origin dev，就能将自己的本地的代码变成最新的了。 </p>
+<p>如果是做测试的，一般是从我们的dev分支上去获取代码进行测试，测试如果出现了bug，开分支进 </p>
+<p>行修复，然后再合并会dev分支，然后再测试，没有问题的话，合并到master分支上，然后进行项目上 </p>
+<p>线。 </p>
+<p><strong>八 给开源项目贡献代码**</strong>第一步：找项目** </p>
+<p>找到一个项目，比如我们的tornado框架，python的，大家在GitHub上搜索tornado就可以了： </p>
+<p>如果 你发现这个框架有些bug，或者是有些功能不够完善，那么我们就可以拿来进行修改。 </p>
+<p><strong>第二步：**</strong>fork** </p>
+<p>先进行fork，点击一下fork就能够将这个项目放到自己账号的空间中了，其实就是将别人空间中的代 </p>
+<p>码拷贝到了自己的账户中： </p>
+<p>然后会看到下面的页面： </p>
+<p>选择自己的账户之后，就可以在自己的账户中看到这个项目了，看下图：<strong>第三步：在自己的仓库中修改代码</strong> </p>
+<p>就又回到了我们之前的流程。 </p>
+<p>然后在本地创建文件夹，clone代码：比如，我创建了一个bug文件，写上一些内容，然后提交push到自己远程仓库中的这个tornado项目 </p>
+<p>里面： </p>
+<p><strong>第四步： 提交**</strong>pull request** </p>
+<p>给源代码作者提交修复bug或者拓展功能的申请，其实就是提交一个pull request。 </p>
+<p>这样我们添加的bug.txt文件就保存到了我们的远程仓库的tornado项目中了。然后如果我们想将修改的内容提交给源代码的话，需要发一个pull request申请： </p>
+<p>然后看到下面的页面：下面是你的仓库中的这个项目的master分支往源代码的作者的仓库中的 </p>
+<p>master分支上请求合并。只要点击pull request，那么申请就发过去了，如果人家合并了你的申请，你 </p>
+<p>就nb了。 </p>
+<p>这就是为开源项目贡献代码的过程。 </p>
+<p><strong>九</strong> <strong>Git**</strong>配置文件详解**配置文件其实分三个： </p>
+<p><strong>1.**</strong>项目配置文件** </p>
+<p>只有当前的git项目生效， 在项目的.git/confifig文件中，对应的配置指令： </p>
+<p><strong>2.**</strong>全局配置文件** </p>
+<p>所有git管理的项目都生效，mac电脑在~/.gitconfifig中，windows在：，对应配置指令： </p>
+<p><strong>3.**</strong>系统配置文件** </p>
+<p>所有项目都生效，mac在/etc/.gitconfifig文件中，windows在： ，对应配置指令： </p>
+<p>应用场景： </p>
+<p>使用配置项的顺序：本地配置–全局配置–系统配置。 </p>
+<p>更多的配置相关内容和指令： </p>
+<p>git config –local user.name ‘wuchao’ </p>
+<p>git config –local user.email ‘wuchao@xx.com’ </p>
+<p>git config –global user.name ‘wuchao’ </p>
+<p>git config –global user.name ‘wuchao@xx.com’ </p>
+<p>git config –system user.name ‘wupeiq’ </p>
+<p>git config –system user.name ‘wupeiqi@xx.com’ </p>
+<p>注意：需要管理员权限，也就是root权限 </p>
+<p>#配置用户名和邮箱 </p>
+<p>git config –local user.name ‘wuchao’ </p>
+<p>git config –local user.email ‘wuchao@xx.com’ </p>
+<p>#配置beyond compare工具 </p>
+<p>git config –local merge.tool bc3 </p>
+<p>git config –local mergetool.path ‘/usr/local/bin/bcomp’ #工具路径 </p>
+<p>git config –local mergetool.keepBackup false </p>
+<p>#配置push的时候的远程仓库的地址 </p>
+<p>git remote add origin 地址， 默认是添加在了本地配置文件中（–local） </p>
+<p>配置 Git 的相关参数。 </p>
+<p>Git 一共有3个配置文件： </p>
+<p>\1. 仓库级的配置文件：在仓库的 .git/.gitconfig，该配置文件只对所在的仓库有效。 </p>
+<p>\2. 全局配置文件：Mac 系统在 ~/.gitconfig，Windows 系统在 C:\Users&lt;用户名 </p>
+<p>&gt;.gitconfig。 </p>
+<p>\3. 系统级的配置文件：在 Git 的安装目录下（Mac 系统下安装目录在 /usr/local/git）的 etc 文件 </p>
+<p>夹中的 gitconfig。 </p>
+<p>看指令： </p>
+<p># 查看配置信息 </p>
+<p># –local：仓库级，–global：全局级，–system：系统级$ git config &lt;–local | –global | –system&gt; -l </p>
+<p># 查看当前生效的配置信息 </p>
+<p>$ git config -l </p>
+<p># 编辑配置文件 </p>
+<p># –local：仓库级，–global：全局级，–system：系统级 </p>
+<p>$ git config &lt;–local | –global | –system&gt; -e </p>
+<p># 添加配置项 </p>
+<p># –local：仓库级，–global：全局级，–system：系统级 </p>
+<p>$ git config &lt;–local | –global | –system&gt; –add <name> <value> </p>
+<p># 获取配置项 </p>
+<p>$ git config &lt;–local | –global | –system&gt; –get <name> </p>
+<p># 删除配置项 </p>
+<p>$ git config &lt;–local | –global | –system&gt; –unset <name> </p>
+<p># 配置提交记录中的用户信息 </p>
+<p>$ git config –global user.name &lt;用户名&gt; </p>
+<p>$ git config –global user.email &lt;邮箱地址&gt; </p>
+<p># 更改Git缓存区的大小 </p>
+<p># 如果提交的内容较大，默认缓存较小，提交会失败 </p>
+<p># 缓存大小单位：B，例如：524288000（500MB） </p>
+<p>$ git config –global http.postBuffer &lt;缓存大小&gt; </p>
+<p># 调用 git status/git diff 命令时以高亮或彩色方式显示改动状态 </p>
+<p>$ git config –global color.ui true </p>
+<p># 配置可以缓存密码，默认缓存时间15分钟 </p>
+<p>$ git config –global credential.helper cache </p>
+<p># 配置密码的缓存时间 </p>
+<p># 缓存时间单位：秒 </p>
+<p>$ git config –global credential.helper ‘cache –timeout=&lt;缓存时间&gt;’ </p>
+<p># 配置长期存储密码 </p>
+<p>$ git config –global credential.helper store </p>
+<p><strong>十</strong> <strong>Git**</strong>远程仓库免密登陆** </p>
+<p>其实之前的git版本在我们进行push的时候，每次都需要输入用户名和密码，很麻烦，所以出现了免 </p>
+<p>密登陆的形式，下面我们说三种免密登陆的形式。 </p>
+<p><strong>1.**</strong>在<strong><strong>url</strong></strong>中进行体现**原来的地址： <a href="https://github.com/wuchao/dbhot.git" target="_blank" rel="noopener">https://github.com/wuchao/dbhot.git</a> </p>
+<p>修改的地址： https://用户名:密码@github.com/wuchao/dbhot.git #这样就在使用远程地址的时候 </p>
+<p>直接加上了用户名和密码，就不需要每次都重新输入了 </p>
+<p>git remote add origin https://用户名:密码@github.com/wuchao/dbhot.git </p>
+<p>git push origin master </p>
+<p>上面的这种形式还可以通过修改配置文件来搞：找到项目的.git文件夹中的confifig文件，然后打开修 </p>
+<p>改，这里我就不做演示了，简单看一下图吧： </p>
+<p><strong>2.**</strong>通过<strong><strong>SSH</strong></strong>实现<strong><strong>(</strong></strong>公私钥<strong>**)</strong> </p>
+<p>其实远程仓库的每个项目都可以获取一个ssh的地址，看图： </p>
+<p>点击这个use ssh之后，就看到下面的内容：这里我们看到了一个地址，其实这个地址是不能直接用的，需要下面的步骤才能通过它来进行免密登 </p>
+<p>陆： </p>
+<p>a. 现在自己的电脑上生成公钥和私钥，看指令： </p>
+<p>ssh-keygen #或者ssh-keygen -r rsa </p>
+<p>这样的话就会在C:\Users\chao.ssh 目录下生成两个文件（mac是在~/.ssh 文件夹下） </p>
+<p>b.拷贝公钥文件中的内容，放到GitHub的配置中：找到GitHub的settings配置：然后添加一下公钥文件中的内容就可以了： </p>
+<p>然后提示你确认密码： </p>
+<p>然后看到下面的页面，就已经配置好了 ： c. 在本地的git中配置远程的ssh地址 </p>
+<p>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:gitflowchao/gitflowtest.git #这个地址是ssh的 </p>
+<p>地址了 </p>
+<p> d. 以后在使用就不用用户名和密码了： </p>
+<p>git push origin master </p>
+<p><strong>3.git**</strong>自动管理凭证** </p>
+<p>其实你会发现，我们输入过一次用户名和密码之后，其实之后的操作一直也不需要再次输入用户名和 </p>
+<p>密码了，因为git自动帮我们管理起来了，这个也在一个地方存着，这里我就不做演示了，你知道一下就 </p>
+<p>行了，这种方式其实我们用起来比较方便，但是其实企业里面一般都是用的第二种，也就是ssh的那 </p>
+<p>种。 </p>
+<p><strong>十一</strong> <strong>Git**</strong>忽略文件** </p>
+<p>其实我们让git管理文件的时候，可以设置一些让git忽略的文件或者文件夹，通过一个叫做 .gitignore </p>
+<p>的文件，首先在我们的git本地仓库中创建一个这样的文件，文件中写上一下内容，看例子：添加让git忽略的文件： </p>
+<p>还可以添加.gitignore自己，通过*.txt能够将所有的.txt结尾的文件全部让git忽略掉什么时候来用的，举个例子，当我们使用python语言的django框架来进行代码开发的时候，这个框 </p>
+<p>架会自动生成一个sqlite数据库文件在项目中，其实这样项目将来在我们提交代码的时候，不需要提交 </p>
+<p>的，所以就可以将它设置为忽略就可以了。 </p>
+<p>gitignore文件中还有下面的一些写法： </p>
+<p>其实我们在写项目的时候，不管你用什么开发语言，其实都会有一些你关注不到的，但是自动生成 </p>
+<p>的，还不需要提交的一些文件，这里呢，GitHub给我们提供了一个各种开发语言的一个可忽略的文件汇 </p>
+<p>总，只需要将对应语言的文件中的内容拷贝到我们的gitignore文件中就可以了，看下图，在GitHub上 </p>
+<p>搜索gitingore。然后看到下面的内容： 地址： <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a> </p>
+<p>然后：注意，在公司进行开发的时候，一定要加上gitignore，不然容易将一些敏感的信息提交到远程，不安 </p>
+<p>全。 </p>
+<p><strong>十二</strong> <strong>GitHub**</strong>做任务管理相关** </p>
+<p><strong>1.issues</strong> </p>
+<p>然后看下图：还可以看下图，给问题打个标签，你是提的bug啊还是文档啊还是什么的。。。 </p>
+<p>还可以做bug管理，比如你提的这个问题是个bug，你可以选择bug类型，然后指派给别人进行处 </p>
+<p>理。 </p>
+<p>然后我们再点击上面这个issues选项，会看到下面的页面：<strong>2.wiki</strong> </p>
+<p>项目介绍，百科，其实写一个项目，都需要写wiki，来做项目的整体描述和说明，其他人来参与项目 </p>
+<p>的时候，先看wiki。 </p>
+<p>然后看到下面的页面：到这里，我们的git就学完了，谢谢大家！</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/23/git%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/23/python%E4%B8%89%E5%A4%A7%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-11-23T12:39:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/12/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          test over
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/23/python%E4%B8%89%E5%A4%A7%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python三大器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/23/python%E4%B8%89%E5%A4%A7%E5%99%A8/">python三大器</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -252,8 +840,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
